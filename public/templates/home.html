@@ -1,28 +1,53 @@
+<!-- Header -->
 <header>
 	<div class="container">
-		<h1>Post-its</h1>
-		<button class="button-primary postit-add" ng-click="openForm()"><i class="typcn typcn-plus"></i> Add Post-it</button>
+		<div class="row">
+			<div class="one-half column">
+				<h1>Post-its</h1>
+			</div>
+			<div class="one-half column">
+				<button class="button-primary postit-add" ng-click="openForm()"><i class="typcn typcn-plus"></i> Add Post-it</button>
+			</div>
+		</div>
 	</div>
 </header>
+<!-- // Header -->
+
+<!-- Search -->
+<div id="search">
+	<div class="container">
+		<input type="text" ng-model="searchQuery" placeholder="Search">
+	</div>
+</div>
+<!-- // Search -->
 
 <div id="content">
 	<div class="container">
-		<div class="row" ng-show="showPostItForm">
-			<form ng-submit="savePostIt()">
-				<input type="text" placeholder="Text here..." ng-model="postItField.content">
-				<input type="submit" class="button" value="Save" />
-			</form>
-		</div>
 
-		<div class="row">
-
-			<div class="three columns postit" ng-repeat="item in postIts | orderBy:'-createdAt' ">
-				<p>{{ item.content }}</p>
-				<button class="action delete" ng-click="deletePostIt(item, $index)"><i class="typcn typcn-trash"></i></button>
-				<button class="action edit" ng-click="openForm(item)"><i class="typcn typcn-edit"></i></button>
+		<!-- Form -->
+		<form class="postit-form" ng-show="showPostItForm" ng-submit="savePostIt()">
+			<textarea placeholder="Text here..." ng-model="postItField.content"></textarea>
+			<div class="row">
+				<div class="one-half column">
+					<button ng-click="showPostItForm = false">Cancel</button>
+				</div>
+				<div class="one-half column">
+					<input type="submit" class="button button-primary" value="Save" />
+				</div>
 			</div>
 
+		</form>
+		<!-- // Form -->
+
+		<!-- Post-its -->
+		<div class="row">
+			<div class="three columns postit" ng-repeat="item in postIts | orderBy:'-createdAt' | filter: { content: searchQuery }">
+				<p>{{ item.content }}</p>
+				<button class="action" ng-click="deletePostIt(item, $index)"><i class="typcn typcn-trash"></i></button>
+				<button class="action" ng-click="openForm(item)"><i class="typcn typcn-edit"></i></button>
+			</div>
 		</div>
+		<!-- // Post-its -->
 
 	</div>
 </div>

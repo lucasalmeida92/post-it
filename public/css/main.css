@@ -6,6 +6,8 @@ body {
 	font-weight: 400;
 	font-size: 1.5em;
 }
+.button,
+button,
 a,
 a:before,
 a:after {
@@ -30,16 +32,29 @@ header .container {
 	padding: 20px 0;
 }
 header h1 {
-	float: left;
-	margin: 0;
-	font-weight: 900;
-	font-size: 3.5em;
-	color: #f6f6f6;
+  float: left;
+  margin: 0;
+  font-weight: 900;
+  font-size: 2.4em;
+  color: #f6f6f6;
+  text-transform: uppercase;
 }
 header .postit-add {
 	float: right;
 	margin: 0;
-	margin-top: 12px;
+	margin-top: 2px;
+}
+@media (max-width: 550px) {
+	header .row .column {
+	  text-align: center;
+	}
+	header h1,
+	header .postit-add {
+		float: none;
+	}
+	header h1 {
+		margin-bottom: 15px;
+	}
 }
 
 /* =================
@@ -49,6 +64,43 @@ header .postit-add {
 	padding: 15px 0;
 }
 
+#search {
+	margin-top: 15px;
+}
+	#search input {
+		width: 100%;
+	}
+/* =================
+		FORM
+==================== */
+.postit-form {
+	position: fixed;
+	background: #fff;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0 0 40px #444;
+	top: 50%;
+	left: 50%;
+	margin-top: -200px;
+	margin-left: -150px;
+	width: 100%;
+	max-width: 260px;
+}
+	.postit-form textarea {
+		background-color: #FDFF77;
+    height: 179px;
+    width: 100%;
+    resize: none;
+    outline: none;
+	}
+	.postit-form button,
+	.postit-form .button {
+    width: 100%;
+	}
+
+/* =================
+		.POSTIT
+==================== */
 .postit {
 	background-color: #FDFF77;
 	padding: 15px 15px 0 15px;
@@ -57,6 +109,8 @@ header .postit-add {
 }
 	.postit .action {
 		border: 0;
+    padding: 0 10px;
+    float: right;
 	}
 		.postit .action i {
 			font-size: 25px;
