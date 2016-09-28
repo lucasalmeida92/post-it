@@ -3,7 +3,8 @@ angular.module('PostIt')
 .factory('postItService', function ($http, $q) {
 
 	return {
-		// Get All
+
+		// ----- METHOD: Get All
 		getAll: function(){
 			var deferred = $q.defer();
 
@@ -16,7 +17,7 @@ angular.module('PostIt')
 			return deferred.promise;
 		},
 
-		// Create
+		// ----- METHOD: Create
 		create: function(content){
 			var deferred = $q.defer();
 
@@ -34,7 +35,21 @@ angular.module('PostIt')
 			return deferred.promise;
 		},
 
-		// Delete by Id
+		// ----- METHOD: Edit
+		edit: function(item){
+			var deferred = $q.defer();
+
+			$http.put('/api/postits', item).success(function(data) {
+					deferred.resolve(data);
+				}).error(function(err){
+					console.log(err);
+					deferred.reject(err);
+				});
+
+			return deferred.promise;
+		},
+
+		// ----- METHOD: Delete by Id
 		delete: function(id){
 			var deferred = $q.defer();
 
