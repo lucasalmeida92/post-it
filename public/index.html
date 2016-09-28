@@ -1,0 +1,27 @@
+<!doctype html>
+<html ng-app="PostIt">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Post-it app</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="libs/skeleton/css/skeleton.css">
+		<link href="https://fonts.googleapis.com/css?family=Catamaran:400,700,900" rel="stylesheet">
+		<link rel="stylesheet" href="libs/typicons.font/src/font/typicons.min.css">
+		<link rel="stylesheet" href="css/main.css">
+
+	</head>
+	<body>
+
+		<div ui-view class="view"></div>
+
+
+		<script src="libs/angular/angular.min.js"></script>
+		<script src="libs/angular-ui-router/release/angular-ui-router.min.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/controllers.js"></script>
+		<script src="js/services.js"></script>
+	</body>
+</html>

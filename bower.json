@@ -1,0 +1,23 @@
+{
+  "name": "post-it",
+  "description": "Post-it application",
+  "main": "index.js",
+  "authors": [
+    "Lucas Almeida"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/lucasalmeida92/post-it",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "typicons.font": "typicons#^2.0.8",
+    "angular": "^1.5.8",
+    "skeleton": "^2.0.4",
+    "angular-ui-router": "^0.3.1"
+  }
+}

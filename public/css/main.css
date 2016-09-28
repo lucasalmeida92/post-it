@@ -1,0 +1,61 @@
+/* =================
+		GENERAL
+==================== */
+body {
+	font-family: 'Catamaran', sans-serif;
+	font-weight: 400;
+	font-size: 1.5em;
+}
+a,
+a:before,
+a:after {
+	text-decoration: none;
+	-webkit-transition: all 150ms linear;
+	-moz-transition: all 150ms linear;
+	-ms-transition: all 150ms linear;
+	-o-transition: all 150ms linear;
+	transition: all 150ms linear;
+}
+a:hover {
+	color: #008ab5;
+}
+
+/* =================
+		HEADER
+==================== */
+header {
+	background-color: #394e5f;
+}
+header .container {
+	padding: 20px 0;
+}
+header h1 {
+	float: left;
+	margin: 0;
+	font-weight: 900;
+	font-size: 3.5em;
+	color: #f6f6f6;
+}
+header .postit-add {
+	float: right;
+	margin: 0;
+	margin-top: 12px;
+}
+
+/* =================
+		#CONTENT
+==================== */
+#content {
+	padding: 15px 0;
+}
+
+.postit {
+	background-color: #FDFF77;
+	padding: 15px;
+}
+	.postit .action {
+		border: 0;
+	}
+		.postit .action i {
+			font-size: 25px;
+		}

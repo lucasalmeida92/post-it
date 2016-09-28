@@ -1,0 +1,22 @@
+<header>
+	<div class="container">
+		<h1>Post-its</h1>
+		<button class="button-primary postit-add" ng-click="createPostIt()"><i class="typcn typcn-plus"></i> Add Post-it</button>
+	</div>
+</header>
+
+<div id="content">
+	<div class="container">
+
+		<div class="row">
+
+			<div class="three columns postit" ng-repeat="item in postIts">
+				<p>{{ item.content }}</p>
+				<button class="action delete"><i class="typcn typcn-trash"></i></button>
+				<button class="action edit"><i class="typcn typcn-edit"></i></button>
+			</div>
+
+		</div>
+
+	</div>
+</div>

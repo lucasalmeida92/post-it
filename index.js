@@ -2,16 +2,19 @@ var express = require('express'),
 		app = express(),
 		postits = require('./postits');
 
-// ==== VIEW (Single Page)
-app.get('/', function (req, res) {
-		res.send('Hello Word!');
-});
+// ==== Serve Static Files
+app.use(express.static(__dirname + '/public'));
 
-// ==== API ENDPOINTS
-app.get('/postits', postits.index);
-app.post('/postits', postits.create);
-app.put('/postits', postits.update);
-app.delete('/postits', postits.delete);
+// ==== API (Endpoints)
+app.get('/api/postits', postits.index);
+app.post('/api/postits', postits.create);
+app.put('/api/postits', postits.update);
+app.delete('/api/postits', postits.delete);
+
+// ==== Application Front-End (Single Page)
+app.get('*', function(req, res) {
+  res.sendfile('./public/index.html');
+});
 
 // ==== SERVER
 app.listen(3000, function () {
