@@ -1,9 +1,12 @@
 var express = require('express'),
 		app = express(),
+		bodyParser = require('body-parser'),
 		postits = require('./postits');
 
 // ==== Serve Static Files
 app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 // ==== API (Endpoints)
 app.get('/api/postits', postits.index);

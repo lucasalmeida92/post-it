@@ -52,6 +52,7 @@ header .postit-add {
 .postit {
 	background-color: #FDFF77;
 	padding: 15px;
+	margin-bottom: 15px;
 }
 	.postit .action {
 		border: 0;

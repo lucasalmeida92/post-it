@@ -7,13 +7,17 @@
 
 <div id="content">
 	<div class="container">
+		<div class="row">
+			<input type="text" placeholder="Text here..." ng-model="postItContent">
+			<button ng-click="savePostIt()">Salvar</button>
+		</div>
 
 		<div class="row">
 
-			<div class="three columns postit" ng-repeat="item in postIts">
+			<div class="three columns postit" ng-repeat="item in postIts | orderBy:'-createdAt' ">
 				<p>{{ item.content }}</p>
-				<button class="action delete"><i class="typcn typcn-trash"></i></button>
-				<button class="action edit"><i class="typcn typcn-edit"></i></button>
+				<button class="action delete" ng-click="deletePostIt(item, $index)"><i class="typcn typcn-trash"></i></button>
+				<button class="action edit" ng-click="editPostIt(item)"><i class="typcn typcn-edit"></i></button>
 			</div>
 
 		</div>
